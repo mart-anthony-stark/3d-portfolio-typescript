@@ -1,2 +1,3 @@
+import "./app";
 import "./styles/animations.css";
-import "./scripts/three_scene";
+import "./components/GalaxyScene";

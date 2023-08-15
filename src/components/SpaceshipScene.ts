@@ -1,6 +1,7 @@
 import { ComponentBuilder } from "../renderer";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
 export class SpaceshipScene extends ComponentBuilder {
   constructor() {
@@ -22,7 +23,7 @@ export class SpaceshipScene extends ComponentBuilder {
     });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
-    camera.position.setZ(30);
+    camera.position.setZ(0);
 
     const pointLight = new THREE.PointLight(0xffffff);
     pointLight.position.set(5, 5, 5);
@@ -30,15 +31,25 @@ export class SpaceshipScene extends ComponentBuilder {
     const ambientLight = new THREE.AmbientLight(0xffffff);
     scene.add(pointLight, ambientLight);
 
-    const assetLoader = new GLTFLoader();
-    assetLoader.load("/assets/gltf/spaceship.glb", function (model) {
-      const spaceship = model.scene;
-      scene.add(spaceship);
-      console.log(spaceship);
-      spaceship.scale.set(5, 5, 5);
-      spaceship.position.set(0, 0, -15);
-      // spaceship.position.set(50, -25, 18);
-    });
+    // ORBIT CONTROLS TO CONTROL ROTATION OF SCENE
+    const orbit = new OrbitControls(camera, renderer.domElement);
+    const axesHelper = new THREE.AxesHelper(3);
+    scene.add(axesHelper);
+
+    camera.position.set(3, 3, 5);
+    orbit.update();
+
+    // const assetLoader = new GLTFLoader();
+    // assetLoader.load("/assets/gltf/space_ship4.glb", function (model) {
+    //   const spaceship = model.scene;
+    //   scene.add(spaceship);
+    //   console.log(spaceship);
+    //   // spaceship.scale.set(-500, -500, -500);
+    //   // spaceship.position.set(0, 0, 55);
+    //   spaceship.rotateY(45.2);
+    //   spaceship.rotateZ(4);
+    //   spaceship.position.set(0, -5, -5);
+    // });
     // scene.add(moon);
 
     // transparent bg

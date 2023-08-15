@@ -7,6 +7,6 @@ import { GalaxyScene } from "./components/GalaxyScene";
 new GalaxyScene().register();
 new Menu().register();
 new Main().register();
-new SpaceshipScene().register();
+// new SpaceshipScene().register();
 
 RegisterEvents(menuEvent, intersectionEvent);

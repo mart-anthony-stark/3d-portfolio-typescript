@@ -9,41 +9,47 @@ export class Main extends ComponentBuilder {
   template: string = `<main>
   <div class="banner" id="home">
     <div class="inner-container">
-    <enfold-animate name="fadeRight" duration="2" once>
+    <enfold-animate name="fadeRight" duration="2">
       <h3 class="text-stroke dev-name" >Mart Salazar</h3>
     </enfold-animate>
-    <enfold-animate name="fadeLeft" duration="2" once>
+    <enfold-animate name="fadeLeft" duration="2">
       <h1 class="upper">FULLSTACK</h1>
     </enfold-animate>
-    <enfold-animate name="fadeRight" duration="2" once>
+    <enfold-animate name="fadeRight" duration="2">
       <h1 class="lower text-stroke">DEVELOPER</h1>
     </enfold-animate>
     </div>
     <div class="indicator"></div>
   </div>
 
+  <enfold-animate name="fadeRight" duration="2">
   <section id="about">
       <blockquote>
-        <p>I enjoy creating stuffs and putting it on the internet.</p>
+        <p>I enjoy creating stuff and putting it on the internet.</p>
       </blockquote>
-    <!-- <div class="container">
-    <h2>📜 About</h2>
-    <p>
-      Mart Anthony Salazar is a highly passionate and driven individual
-      who is dedicated to expanding his knowledge of various programming
-      languages, technologies, and skills. With a strong desire to excel
-      in his future endeavors and projects, Mart has amassed valuable
-      experience in freelancing, particularly in the fields of web
-      development and data science.
-    </p>
-  </div> -->
+  </div>
+  </section>
+  </enfold-animate>
+
+  <section>
+    <blockquote>
+      <p>Involved in Web, Mobile, and 3D Modelling projects.</p>
+    </blockquote>
   </section>
 
-  <section></section>
+  <enfold-animate name="fadeLeft" duration="2">
+  <section>
+  <blockquote class="text-right">
+    <p>Experienced in both web consulting agency and startup environments.</p>
+  </blockquote>
+  </section>
+  </enfold-animate>
 
-  <blockquote data-aos="fade-right" data-aos-duration="2000">
+<section>
+  <blockquote>
     <p>The best way out is always through <br />-Robert Frost</p>
   </blockquote>
+</section>
 </main>
 
 `;

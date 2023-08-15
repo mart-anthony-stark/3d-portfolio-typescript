@@ -4,6 +4,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { ComponentBuilder } from "../renderer";
 
 export class GalaxyScene extends ComponentBuilder {
+  public boudingTop: number = 0;
   constructor() {
     super();
   }
@@ -62,49 +63,41 @@ export class GalaxyScene extends ComponentBuilder {
     );
     scene.add(moon);
     moon.position.set(0, -15, -15);
-    // EARTH
+
     const assetLoader = new GLTFLoader();
-    let earth: THREE.Group, mars: THREE.Group, saturn: THREE.Group, spaceship;
-    assetLoader.load("/assets/gltf/spaceship.glb", function (model) {
-      spaceship = model.scene;
-      scene.add(spaceship);
-      spaceship.position.z = -15;
-      spaceship.position.y = 25;
-      spaceship.position.setX(0);
-      // spaceship.position.set(50, -25, 18);
+    let spaceship1: THREE.Group;
+    assetLoader.load("/assets/gltf/space_ship4.glb", function (model) {
+      spaceship1 = model.scene;
+      scene.add(spaceship1);
+      spaceship1.rotateY(45.2);
+      spaceship1.rotateZ(4);
+      spaceship1.position.set(20, -15, 1);
     });
 
-    function moveCamera() {
-      const t = document.body.getBoundingClientRect().top;
-      console.log(t);
-      moon.rotation.x += 0.05;
-      moon.rotation.y += 0.075;
-      moon.rotation.z += 0.05;
+    const moveCamera = () => {
+      this.boudingTop = document.body.getBoundingClientRect().top;
+      console.log(this.boudingTop);
 
-      if (mars) {
-        mars.rotation.x += 0.03;
-        mars.rotation.y += 0.025;
-        mars.rotation.z += 0.04;
-      }
-      if (earth) {
-        earth.rotation.y += 0.025;
-      }
-
-      if (saturn) {
-        saturn.rotation.y += 0.05;
-      }
-
-      camera.position.z = t * -0.01;
-      camera.position.x = t * -0.02;
-      camera.position.y = t * 0.02;
+      camera.position.z = this.boudingTop * -0.01;
+      camera.position.x = this.boudingTop * -0.02;
+      camera.position.y = this.boudingTop * 0.02;
 
       camera.updateProjectionMatrix();
-    }
+    };
     moveCamera();
     document.body.onscroll = moveCamera;
 
     function animate() {
       renderer.render(scene, camera);
+
+      moon.rotation.x += 0.005;
+      moon.rotation.y += 0.0075;
+      moon.rotation.z += 0.005;
+
+      if (spaceship1) {
+        spaceship1.rotation.y += 0.001;
+        spaceship1.rotation.z -= 0.00001;
+      }
     }
     renderer.setAnimationLoop(animate);
 

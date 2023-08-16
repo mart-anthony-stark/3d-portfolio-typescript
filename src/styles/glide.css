@@ -3,6 +3,8 @@
   height: 400px;
   cursor: grab;
   overflow: hidden;
+  transform: rotate(5deg);
+  border-radius: 10px;
 }
 .projects-container {
   margin-top: 3rem;

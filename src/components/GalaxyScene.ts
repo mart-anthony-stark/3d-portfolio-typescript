@@ -1,6 +1,16 @@
-import * as THREE from "three";
-// import GLTFLoader from "three-gltf-loader";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import {
+  Scene,
+  PerspectiveCamera,
+  WebGLRenderer,
+  PointLight,
+  AmbientLight,
+  SphereGeometry,
+  Mesh,
+  MeshBasicMaterial,
+  MeshStandardMaterial,
+  TextureLoader,
+  MathUtils,
+} from "three";
 import { ComponentBuilder } from "../renderer";
 
 export class GalaxyScene extends ComponentBuilder {
@@ -10,17 +20,21 @@ export class GalaxyScene extends ComponentBuilder {
   }
   template: string = `<canvas id="bg"></canvas>`;
 
-  OnMount(): void {
-    const scene = new THREE.Scene();
+  async OnMount(): Promise<void> {
+    const { GLTFLoader } = await import(
+      "three/examples/jsm/loaders/GLTFLoader.js"
+    );
 
-    const camera = new THREE.PerspectiveCamera(
+    const scene = new Scene();
+
+    const camera = new PerspectiveCamera(
       75,
       window.innerWidth / window.innerHeight,
       0.1,
       1000
     );
 
-    const renderer = new THREE.WebGLRenderer({
+    const renderer = new WebGLRenderer({
       canvas: document.querySelector("#bg") as HTMLCanvasElement,
     });
 
@@ -28,20 +42,20 @@ export class GalaxyScene extends ComponentBuilder {
     renderer.setSize(window.innerWidth, window.innerHeight);
     camera.position.setZ(30);
 
-    const pointLight = new THREE.PointLight(0xffffff);
+    const pointLight = new PointLight(0xffffff);
     pointLight.position.set(5, 5, 5);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff);
+    const ambientLight = new AmbientLight(0xffffff);
     scene.add(pointLight, ambientLight);
 
     function addStar() {
-      const geometry = new THREE.SphereGeometry(0.2, 24, 25);
-      const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
-      const star = new THREE.Mesh(geometry, material);
+      const geometry = new SphereGeometry(0.2, 24, 25);
+      const material = new MeshBasicMaterial({ color: 0xffffff });
+      const star = new Mesh(geometry, material);
 
       const [x, y, z] = Array(3)
         .fill(null)
-        .map(() => THREE.MathUtils.randFloatSpread(400));
+        .map(() => MathUtils.randFloatSpread(400));
       star.position.set(x, y, z);
       scene.add(star);
     }
@@ -52,11 +66,11 @@ export class GalaxyScene extends ComponentBuilder {
     renderer.setClearColor(0x212024);
 
     // MOON
-    const moonTexture = new THREE.TextureLoader().load("./assets/moon.jpg");
-    const normalTexture = new THREE.TextureLoader().load("./assets/normal.jpg");
-    const moon = new THREE.Mesh(
-      new THREE.SphereGeometry(3, 32, 32),
-      new THREE.MeshStandardMaterial({
+    const moonTexture = new TextureLoader().load("./assets/moon.jpg");
+    const normalTexture = new TextureLoader().load("./assets/normal.jpg");
+    const moon = new Mesh(
+      new SphereGeometry(3, 32, 32),
+      new MeshStandardMaterial({
         map: moonTexture,
         normalMap: normalTexture,
       })

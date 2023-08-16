@@ -1,6 +1,6 @@
 import { ComponentBuilder } from "../renderer";
 import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+// import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
 export class SpaceshipScene extends ComponentBuilder {

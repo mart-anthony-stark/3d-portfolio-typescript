@@ -1,7 +1,3 @@
-export const RegisterEvents = (...events: Array<Function>) => {
-  events.forEach((e) => e());
-};
-
 export const menuEvent = () => {
   const burger = document.querySelector(".burger");
   const main = document.querySelector("main");
@@ -55,5 +51,15 @@ export const intersectionEvent = () => {
 
   elements.forEach((el) => {
     if (el) observer.observe(el!);
+  });
+};
+
+export const cardsEvent = () => {
+  const cards = document.querySelectorAll(".glide__slide");
+  cards?.forEach((card) => {
+    card.addEventListener("click", (e: any) => {
+      const value = JSON.parse(e.target.getAttribute("data-obj"));
+      console.log(value);
+    });
   });
 };

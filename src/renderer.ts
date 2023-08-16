@@ -29,5 +29,9 @@ export class ComponentBuilder {
     this.OnMount();
   }
 
+  component() {
+    return this.template;
+  }
+
   OnMount() {}
 }

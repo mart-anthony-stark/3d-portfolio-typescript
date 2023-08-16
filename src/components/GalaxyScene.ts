@@ -41,12 +41,12 @@ export class GalaxyScene extends ComponentBuilder {
 
       const [x, y, z] = Array(3)
         .fill(null)
-        .map(() => THREE.MathUtils.randFloatSpread(300));
+        .map(() => THREE.MathUtils.randFloatSpread(400));
       star.position.set(x, y, z);
       scene.add(star);
     }
 
-    Array(500).fill(null).forEach(addStar);
+    Array(800).fill(null).forEach(addStar);
 
     // ADD BACKGROUND
     renderer.setClearColor(0x212024);
@@ -65,13 +65,20 @@ export class GalaxyScene extends ComponentBuilder {
     moon.position.set(0, -15, -15);
 
     const assetLoader = new GLTFLoader();
-    let spaceship1: THREE.Group;
+    let spaceship1: THREE.Group, saturn: THREE.Group;
     assetLoader.load("/assets/gltf/space_ship4.glb", function (model) {
       spaceship1 = model.scene;
       scene.add(spaceship1);
       spaceship1.rotateY(45.2);
       spaceship1.rotateZ(4);
       spaceship1.position.set(20, -15, 1);
+    });
+
+    assetLoader.load("/assets/gltf/saturn.glb", function (model) {
+      saturn = model.scene;
+      scene.add(saturn);
+      saturn.rotateX(0.4);
+      saturn.position.set(60, -40, 1);
     });
 
     const moveCamera = () => {
@@ -97,6 +104,10 @@ export class GalaxyScene extends ComponentBuilder {
       if (spaceship1) {
         spaceship1.rotation.y += 0.001;
         spaceship1.rotation.z -= 0.00001;
+      }
+
+      if (saturn) {
+        saturn.rotation.y += 0.04;
       }
     }
     renderer.setAnimationLoop(animate);

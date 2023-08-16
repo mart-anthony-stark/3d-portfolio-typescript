@@ -26,7 +26,7 @@ export const menuEvent = () => {
 };
 
 export const intersectionEvent = () => {
-  const ids = ["home", "about"];
+  const ids = ["home", "about", "projects"];
   const elements = ids.map((el) => document.querySelector(`#${el}`));
   const navItems = ids.map((el) => document.querySelector(`#${el}-link`));
 

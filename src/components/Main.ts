@@ -22,14 +22,12 @@ export class Main extends ComponentBuilder {
     <div class="indicator"></div>
   </div>
 
-  <enfold-animate name="fadeRight" duration="2">
   <section id="about">
       <blockquote>
         <p>I enjoy creating stuff and putting it on the internet.</p>
       </blockquote>
   </div>
   </section>
-  </enfold-animate>
 
   <section>
     <blockquote>
@@ -37,13 +35,17 @@ export class Main extends ComponentBuilder {
     </blockquote>
   </section>
 
-  <enfold-animate name="fadeLeft" duration="2">
   <section>
   <blockquote class="text-right">
     <p>Experienced in both web consulting agency and startup environments.</p>
   </blockquote>
   </section>
-  </enfold-animate>
+
+<section id="projects">
+  <blockquote>
+  <p>Here are some of my recent projects</p>
+  </blockquote>
+</section>
 
 <section>
   <blockquote>

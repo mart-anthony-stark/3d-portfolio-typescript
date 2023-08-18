@@ -97,7 +97,6 @@ export class GalaxyScene extends ComponentBuilder {
 
     const moveCamera = () => {
       this.boudingTop = document.body.getBoundingClientRect().top;
-      console.log(this.boudingTop);
 
       camera.position.z = this.boudingTop * -0.01;
       camera.position.x = this.boudingTop * -0.02;

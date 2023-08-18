@@ -1,12 +1,12 @@
 import { ComponentBuilder } from "../renderer";
 
-interface IMenuItem {
+export interface IMenuItem {
   link: String;
   name: String;
 }
 
-const menuItemsList: Array<IMenuItem> = [
-  { link: "#", name: "home" },
+export const menuItemsList: Array<IMenuItem> = [
+  // { link: "#", name: "home" },
   { link: "#about", name: "about" },
   { link: "#projects", name: "projects" },
   { link: "#contact", name: "contact" },
@@ -21,7 +21,7 @@ export class Menu extends ComponentBuilder {
   }
 
   template = `
-    <div class="burger">
+    <div class="burger hidden">
         <div class="bar"></div>
     </div>
     <div class="menu-list hidden">

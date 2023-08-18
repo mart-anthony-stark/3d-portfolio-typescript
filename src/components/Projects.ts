@@ -8,26 +8,12 @@ export class Projects extends ComponentBuilder {
         img: "https://raw.githubusercontent.com/mart-anthony-stark/Mart-Anthony-Salazar-Developer-Portfolio/main/public/projects/expice/2.webp",
       },
       {
-        name: "b",
+        name: "Fake News Detector",
         img: "https://raw.githubusercontent.com/mart-anthony-stark/Mart-Anthony-Salazar-Developer-Portfolio/main/public/projects/fake-news/1.webp",
       },
       {
-        name: "c",
-        img: "https://www.hindustantimes.com/ht-img/img/2023/04/13/550x309/jujutsu-kaisen_1677610900982_1681390659209_1681390659209.webp",
-      },
-    ],
-    [
-      {
-        name: "Expice",
-        img: "https://raw.githubusercontent.com/mart-anthony-stark/Mart-Anthony-Salazar-Developer-Portfolio/main/public/projects/expice/2.webp",
-      },
-      {
-        name: "b",
-        img: "https://raw.githubusercontent.com/mart-anthony-stark/Mart-Anthony-Salazar-Developer-Portfolio/main/public/projects/fake-news/1.webp",
-      },
-      {
-        name: "c",
-        img: "https://www.hindustantimes.com/ht-img/img/2023/04/13/550x309/jujutsu-kaisen_1677610900982_1681390659209_1681390659209.webp",
+        name: "Pit Arsons",
+        img: "/assets/pitarsons.png",
       },
     ],
   ];
@@ -41,9 +27,14 @@ export class Projects extends ComponentBuilder {
             ${p
               .map(
                 (project: any) =>
-                  `<li class="glide__slide"><img data-obj='${JSON.stringify(
-                    project
-                  )}' src="${project.img}"/></li>`
+                  `<li class="glide__slide">
+                  <div class="overlay">
+                    
+                  </div>
+                  
+                  <img data-obj='${JSON.stringify(project)}' src="${
+                    project.img
+                  }"/></li>`
               )
               .join("")}
             </ul>

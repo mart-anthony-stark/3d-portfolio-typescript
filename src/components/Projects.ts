@@ -6,6 +6,7 @@ export interface IProject {
   img: string;
   desc: string;
   link?: string;
+  stack?: Array<string>;
 }
 
 export class Projects extends ComponentBuilder {
@@ -15,17 +16,27 @@ export class Projects extends ComponentBuilder {
       img: "/assets/pitarsons.png",
       desc: "Food Ecommerce Web App",
       link: "https://pitarsons.netlify.app/",
+      stack: ["React", "Nodejs", "MongoDB"],
     },
     {
       name: "Expice",
       img: "https://raw.githubusercontent.com/mart-anthony-stark/Mart-Anthony-Salazar-Developer-Portfolio/main/public/projects/expice/2.webp",
-      desc: "Food Delivery App",
+      desc: "Food Delivery and Reservation Web Application for Expice Restaurant",
+      stack: ["Vue", "Nodejs", "MongoDB"],
     },
     {
       name: "Fake News Detector",
       img: "https://raw.githubusercontent.com/mart-anthony-stark/Mart-Anthony-Salazar-Developer-Portfolio/main/public/projects/fake-news/1.webp",
-      desc: "A machine learning application (browser extension) that predicts the probability of selected filipino news article if it is real or fake. The data used in training the model ",
+      desc: "A machine learning application (browser extension) that predicts the probability of selected filipino news article if it is real or fake. The data used in training the model are expertly-curated benchmark dataset for fake news detection in Filipino.",
       link: "https://github.com/mart-anthony-stark/Filipino-Fake-News-Detector-Chrome-Extension",
+      stack: ["Python", "Javascript"],
+    },
+    {
+      name: "N-Genly",
+      img: "https://github.com/mart-anthony-stark/Ngenly-CLI/blob/main/image-3.png?raw=true",
+      desc: "A Nodejs CRUD API generator. N-Genly is an automation tool to create RESTful APIs with basic create, read, update, and delete operations. This also ships with extra utilities like authentication and route guards for rapid development.",
+      link: "https://github.com/mart-anthony-stark/Ngenly-CLI",
+      stack: ["Typescript", "Javascript", "Nodejs"],
     },
   ];
 
@@ -36,8 +47,17 @@ export class Projects extends ComponentBuilder {
                       <img src='${project.img}' alt='${project.name}'/>        
                     </figure>
                     <div class="details">
-                      <h4>${project.name}</h4>
+                      <h4>${project.name} ${
+            project.link
+              ? '<i class="fa fa-external-link-square" aria-hidden="true"></i>'
+              : ""
+          }</h4>
                       <p>${project.desc}</p>
+                      <div class="tech-stack">
+                        ${project.stack
+                          ?.map((tech) => `<div class="tech">${tech}</div>`)
+                          .join("")}
+                      </div>
                     </div>
                   </div>`;
         })}

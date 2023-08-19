@@ -1,5 +1,6 @@
 import { ComponentBuilder, renderElement } from "../renderer";
 import "../styles/glide.css";
+import "../styles/contact.css";
 import { DesktopMenu } from "./DesktopMenu";
 import { Projects } from "./Projects";
 import { Socials } from "./Socials";
@@ -9,19 +10,20 @@ export class Main extends ComponentBuilder {
     super();
   }
   OnMount(): void {
+    console.log(" 🚀Main Component did mount🚀");
     const script = document.createElement("script");
-    const glide = `new Glide(".multi1", {
-      type: "carousel",
-      autoplay: 3500,
-      focusAt: 'center',
-      perView: 2,
-    }).mount();
-    new Glide(".multi2", {
-      type: "carousel",
-      autoplay: 3000,
-      focusAt: 'center',
-      perView: 2,
-    }).mount();`;
+    // const glide = `new Glide(".multi1", {
+    //   type: "carousel",
+    //   autoplay: 3500,
+    //   focusAt: 'center',
+    //   perView: 2,
+    // }).mount();
+    // new Glide(".multi2", {
+    //   type: "carousel",
+    //   autoplay: 3000,
+    //   focusAt: 'center',
+    //   perView: 2,
+    // }).mount();`;
     script.innerHTML = `
       AOS.init();
     `;
@@ -68,6 +70,25 @@ export class Main extends ComponentBuilder {
 
   <section id="projects" class='projects center'>
   ${new Projects().component()}
+
+  <a class="archive" href="https://github.com/mart-anthony-stark" target="_blank">
+    <span>
+      View Full Project Archive
+    </span>
+    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+  </a>
+  </section>
+
+  <section action="#" method="post" id="contact" class="center">
+    <form id="contact-form">
+      <h3>Send Me A Message🚀</h3>
+      <input type="text" placeholder="Full name*" required/>
+      <input type="email" placeholder="Email Address*" required/>
+      <input type="text" placeholder="Subject" />
+      <p>Tell me more</p>
+      <textarea placeholder="Message"></textarea>
+      <input type="submit" value="Submit" />
+    </form>
   </section>
 
   <section class="center">
@@ -75,12 +96,18 @@ export class Main extends ComponentBuilder {
       <p>The best way out is always through <br />-Robert Frost</p>
     </blockquote>
   </section>
-  
-  <section id="contact" class="center">
-    <blockquote>
-      <p>The best way out is always through <br />-Robert Frost</p>
-    </blockquote>
-  </section>
+  <div class="end">
+    <p>
+    Built using 
+    <span>HTML</span>,
+    <span>CSS</span>, and 
+    <span>Typescript</span> with 
+    <a href="https://vitejs.dev/" target="blank">
+      <span>Vite</span>
+    </a>
+    </p>
+    Coded in <span>VSCode</span> by yours truly 
+  </div>
 
 </div>
 </main>

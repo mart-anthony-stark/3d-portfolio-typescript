@@ -18,7 +18,7 @@ canvas {
   --dark-bg: rgba(15, 15, 15, 0.8);
   --dark-solid: rgb(15, 15, 15);
   --spacing: 300px;
-  --accent: #4469a0b0;
+  --accent: #6bb8ff;
 
   font-family: brandon-grotesque, sans-serif;
   font-weight: 400;
@@ -233,6 +233,16 @@ blockquote {
     rgba(2, 1, 9, 1) 75%
   );
   border-radius: 10px;
+}
+.end {
+  padding: 1rem;
+  color: rgb(143, 143, 143);
+}
+.end a {
+  text-decoration-color: var(--accent);
+}
+.end span {
+  color: var(--accent);
 }
 
 @media screen and (max-width: 1360px) {

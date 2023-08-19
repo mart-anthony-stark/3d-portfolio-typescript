@@ -1,0 +1,12 @@
+#cursor {
+  position: fixed;
+  z-index: 99;
+  height: 100vh;
+  max-width: unset;
+  width: 100vw !important;
+  background-image: radial-gradient(
+    circle farthest-side at 50px 50px,
+    #5869835e 0%,
+    transparent 100%
+  );
+}

@@ -1,6 +1,7 @@
 import { ComponentBuilder, renderElement } from "../renderer";
 import "../styles/glide.css";
 import { DesktopMenu } from "./DesktopMenu";
+import { Socials } from "./Socials";
 
 export class Main extends ComponentBuilder {
   constructor() {
@@ -40,8 +41,8 @@ export class Main extends ComponentBuilder {
     </enfold-animate>
 
     ${new DesktopMenu().component()}
+    ${new Socials().component()}
     </div>
-    <!-- <div class="indicator"></div> -->
   </div>
 
 
@@ -72,6 +73,13 @@ export class Main extends ComponentBuilder {
       <p>The best way out is always through <br />-Robert Frost</p>
     </blockquote>
   </section>
+  
+  <section id="contact" class="center">
+    <blockquote>
+      <p>The best way out is always through <br />-Robert Frost</p>
+    </blockquote>
+  </section>
+
 </div>
 </main>
 

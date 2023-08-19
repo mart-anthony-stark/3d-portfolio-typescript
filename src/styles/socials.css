@@ -1,0 +1,9 @@
+.socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 4rem;
+}
+.socials a {
+  color: white;
+  font-size: 2rem;
+}

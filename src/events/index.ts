@@ -29,7 +29,7 @@ export const menuEvent = () => {
 };
 
 export const intersectionEvent = () => {
-  const ids = ["about", "projects"];
+  const ids = ["about", "projects", "contact"];
   const elements = ids.map((el) => document.querySelector(`#${el}`));
   const navItems = ids.map((el) => document.querySelector(`#${el}-link`));
   const mainNavItems = ids.map((el) =>

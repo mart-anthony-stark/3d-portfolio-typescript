@@ -15,7 +15,6 @@ export class CursorDiv extends ComponentBuilder {
       }
       const x = event.clientX;
       const y = event.clientY;
-      console.log(x, y);
       radialGradient.style.setProperty("--cursor-x", `${x}px`);
       radialGradient.style.setProperty("--cursor-y", `${y}px`);
     });

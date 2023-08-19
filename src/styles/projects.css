@@ -1,0 +1,60 @@
+.projects {
+  flex-direction: column;
+  gap: 1rem;
+}
+.projects img {
+  transition: 0.5s ease-in-out;
+  height: 100%;
+  width: 100%;
+}
+.card {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 1rem;
+  border-radius: 5px;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.01);
+  transition: 0.3s ease;
+  color: rgb(143, 143, 143);
+  user-select: none;
+}
+.card:not([data-link="undefined"]) {
+  cursor: pointer;
+}
+.card .details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.card figure {
+  overflow: hidden;
+  height: 100px;
+  width: 100%;
+}
+.card:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.card:hover h4 {
+  color: rgb(107, 184, 255);
+}
+.card:hover img {
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 450px) {
+  .card {
+    grid-template-columns: 1fr;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  .card figure {
+    height: 200px;
+  }
+  .card h4 {
+    color: rgb(107, 184, 255);
+  }
+}

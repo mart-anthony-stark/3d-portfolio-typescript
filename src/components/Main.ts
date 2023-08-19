@@ -1,6 +1,7 @@
 import { ComponentBuilder, renderElement } from "../renderer";
 import "../styles/glide.css";
 import { DesktopMenu } from "./DesktopMenu";
+import { Projects } from "./Projects";
 import { Socials } from "./Socials";
 
 export class Main extends ComponentBuilder {
@@ -9,20 +10,20 @@ export class Main extends ComponentBuilder {
   }
   OnMount(): void {
     const script = document.createElement("script");
+    const glide = `new Glide(".multi1", {
+      type: "carousel",
+      autoplay: 3500,
+      focusAt: 'center',
+      perView: 2,
+    }).mount();
+    new Glide(".multi2", {
+      type: "carousel",
+      autoplay: 3000,
+      focusAt: 'center',
+      perView: 2,
+    }).mount();`;
     script.innerHTML = `
       AOS.init();
-      new Glide(".multi1", {
-        type: "carousel",
-        autoplay: 3500,
-        focusAt: 'center',
-        perView: 2,
-      }).mount();
-      new Glide(".multi2", {
-        type: "carousel",
-        autoplay: 3000,
-        focusAt: 'center',
-        perView: 2,
-      }).mount();
     `;
     renderElement(script);
   }
@@ -65,7 +66,8 @@ export class Main extends ComponentBuilder {
       </blockquote>
     </section>
 
-  <section id="projects" class='center'>
+  <section id="projects" class='projects center'>
+  ${new Projects().component()}
   </section>
 
   <section class="center">

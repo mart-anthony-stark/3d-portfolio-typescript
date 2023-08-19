@@ -78,3 +78,16 @@ export const cardsEvent = () => {
     });
   });
 };
+
+export const projectsEvent = () => {
+  const projects = document.querySelectorAll(".projects .card");
+  console.log(projects);
+  projects.forEach((project) => {
+    project.addEventListener("click", () => {
+      const link = project?.getAttribute("data-link");
+      if (link != "undefined") {
+        window.open(link!, "_blank");
+      }
+    });
+  });
+};

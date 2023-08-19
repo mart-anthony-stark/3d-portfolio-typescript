@@ -1,12 +1,14 @@
 #cursor {
+  --cursor-x: 50px;
+  --cursor-y: 50px;
   position: fixed;
   z-index: 99;
   height: 100vh;
   max-width: unset;
   width: 100vw !important;
   background-image: radial-gradient(
-    circle farthest-side at 50px 50px,
-    #5869835e 0%,
-    transparent 100%
+    circle farthest-side at var(--cursor-x) var(--cursor-y),
+    #4469a049 2%,
+    transparent 80%
   );
 }

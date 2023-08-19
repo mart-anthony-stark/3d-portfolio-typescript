@@ -27,7 +27,7 @@ export class Main extends ComponentBuilder {
     renderElement(script);
   }
 
-  template: string = `<main>
+  template: string = `<main class="hidden">
   <div class="banner">
     <div class="inner-container">
     <enfold-animate name="fadeRight" duration="2">

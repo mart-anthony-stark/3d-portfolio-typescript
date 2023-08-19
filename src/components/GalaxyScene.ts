@@ -64,6 +64,8 @@ export class GalaxyScene extends ComponentBuilder {
 
     // ADD BACKGROUND
     renderer.setClearColor(0x212024);
+    const mainDiv = document.querySelector("main");
+    mainDiv?.classList.remove("hidden");
 
     // MOON
     const moonTexture = new TextureLoader().load("./assets/moon.jpg");

@@ -93,7 +93,7 @@ export class Main extends ComponentBuilder {
 
   <section class="center">
     <blockquote>
-      <p>The best way out is always through <br />-Robert Frost</p>
+      <p>"The only way to do great work is to love what you do."  <br />- Steve Jobs</p>
     </blockquote>
   </section>
   <div class="end">

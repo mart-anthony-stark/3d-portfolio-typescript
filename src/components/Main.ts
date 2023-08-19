@@ -100,7 +100,9 @@ export class Main extends ComponentBuilder {
     <p>
     Built using 
     <span>HTML</span>,
-    <span>CSS</span>, and 
+    <span>CSS</span>, 
+    <span>ThreeJS</span>, 
+    and 
     <span>Typescript</span> with 
     <a href="https://vitejs.dev/" target="blank">
       <span>Vite</span>

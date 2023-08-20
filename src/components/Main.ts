@@ -42,27 +42,29 @@ export class Main extends ComponentBuilder {
     <enfold-animate name="fadeRight" duration="2">
       <h2 class="lower text-stroke">DEVELOPER</h2>
     </enfold-animate>
+    <p>I build efficient and user-friendly solutions for the web.</p>
 
     ${new DesktopMenu().component()}
     ${new Socials().component()}
+
     </div>
   </div>
 
 
   <div class='main-content'>
-    <section id="about" class='center'>
+    <section id="about" class='center half-vh'>
         <blockquote>
           <p>I enjoy creating stuff and putting it on the internet.</p>
         </blockquote>
     </section>
 
-    <section class='center'>
+    <section class='center half-vh'>
       <blockquote data-aos="fade-up" data-aos-duration="2000">
         <p>Involved in Web, Mobile, and 3D Modelling projects.</p>
       </blockquote>
     </section>
 
-    <section class='center'>
+    <section class='center half-vh'>
       <blockquote data-aos="fade-up" data-aos-duration="2000" >
         <p>Experienced in both web consulting agency and startup environments.</p>
       </blockquote>

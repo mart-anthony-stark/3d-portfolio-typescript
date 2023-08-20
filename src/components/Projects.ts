@@ -12,6 +12,13 @@ export interface IProject {
 export class Projects extends ComponentBuilder {
   private projects: Array<IProject> = [
     {
+      name: "CamNorth Travel",
+      img: "/assets/camnorth2.png",
+      desc: "The CamNorth Travel App is a user-friendly mobile application designed to enhance the travel experience for visitors exploring the captivating province of Camarines Norte in the Philippines. The app serves as a comprehensive guide, providing travelers with essential information, interactive maps, and personalized recommendations to ensure a memorable and hassle-free journey.",
+      link: "https://github.com/mart-anthony-stark/CamNorth-Travel",
+      stack: ["Flutter", "Firebase"],
+    },
+    {
       name: "Pit Arsons",
       img: "/assets/pitarsons.png",
       desc: "Food Ecommerce Web App",

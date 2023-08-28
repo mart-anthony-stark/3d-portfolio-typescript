@@ -1,17 +1,20 @@
 import { ComponentBuilder, renderElement } from "../renderer";
 import "../styles/glide.css";
 import "../styles/contact.css";
-import { DesktopMenu } from "./DesktopMenu";
-import { Projects } from "./Projects";
-import { Socials } from "./Socials";
+
+const { TechStack } = await import("./TechStack");
+const { DesktopMenu } = await import("./DesktopMenu");
+const { Projects } = await import("./Projects");
+const { Socials } = await import("./Socials");
 
 export class Main extends ComponentBuilder {
   constructor() {
     super();
   }
   OnMount(): void {
-    console.log(" 🚀Main Component did mount🚀");
+    console.log("🚀Main Component did mount🚀");
     const script = document.createElement("script");
+
     // const glide = `new Glide(".multi1", {
     //   type: "carousel",
     //   autoplay: 3500,
@@ -58,10 +61,14 @@ export class Main extends ComponentBuilder {
         </blockquote>
     </section>
 
-    <section class='center half-vh'>
+    <section class='center flex-col half-vh'>
       <blockquote data-aos="fade-up" data-aos-duration="2000">
         <p>Involved in Web, Mobile, and 3D Modelling projects.</p>
       </blockquote>
+
+      <div data-aos="fade-up" data-aos-duration="2000">
+      ${new TechStack().component()}
+      </div>
     </section>
 
     <section class='center half-vh'>
@@ -94,7 +101,7 @@ export class Main extends ComponentBuilder {
   </section>
 
   <section class="center">
-    <blockquote>
+    <blockquote data-aos="fade-up" data-aos-duration="2000">
       <p>"The only way to do great work is to love what you do."  <br />- Steve Jobs</p>
     </blockquote>
   </section>

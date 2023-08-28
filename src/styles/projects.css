@@ -15,10 +15,11 @@
   border-radius: 5px;
   width: 100%;
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.01);
+  background: rgba(0, 0, 0, 0.15);
   transition: 0.3s ease;
-  color: rgb(143, 143, 143);
+  color: rgb(211, 211, 211);
   user-select: none;
+  backdrop-filter: blur(50px);
 }
 .card:not([data-link="undefined"]) {
   cursor: pointer;
@@ -37,12 +38,6 @@
   overflow: hidden;
   height: 100px;
   width: 100%;
-}
-.card:hover {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  box-shadow: 1px 3px 5px 0px rgba(255, 255, 255, 0.2) inset,
-    0 5px 10px rgba(0, 0, 0, 0.2);
 }
 .card:hover .details h4 {
   color: rgb(107, 184, 255);
@@ -81,10 +76,6 @@
 @media screen and (max-width: 531px) {
   .card {
     grid-template-columns: 1fr;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    box-shadow: 1px 3px 5px 0px rgba(255, 255, 255, 0.2) inset,
-      0 5px 10px rgba(0, 0, 0, 0.2);
   }
   .card figure {
     height: 200px;

@@ -1,0 +1,26 @@
+.techstack {
+  display: flex;
+  gap: 1rem;
+  margin-top: 5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.techstack .stack {
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(1px);
+  /* border: 1px solid white; */
+  height: 90px;
+  width: 90px;
+  display: grid;
+  place-items: center;
+  transition: 0.3s ease;
+}
+.techstack img {
+  height: 60px;
+  width: 60px;
+}
+.techstack .stack:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 1);
+}

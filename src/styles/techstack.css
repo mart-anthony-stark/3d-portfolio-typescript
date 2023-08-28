@@ -9,18 +9,22 @@
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(1px);
-  /* border: 1px solid white; */
-  height: 90px;
-  width: 90px;
-  display: grid;
-  place-items: center;
+  height: 110px;
+  width: 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
   transition: 0.3s ease;
+  font-weight: 600;
 }
 .techstack img {
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
 }
 .techstack .stack:hover {
   opacity: 1;
   background: rgba(255, 255, 255, 1);
+  color: black;
 }

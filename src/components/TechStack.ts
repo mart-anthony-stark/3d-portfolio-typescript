@@ -20,6 +20,7 @@ export class TechStack extends ComponentBuilder {
             (tech) => `
             <div class="stack">
                 <img src='/icons/${tech.toLowerCase()}.svg' />
+                <span>${tech}</span>
             </div>
         `
           )

@@ -1,17 +1,16 @@
 import { ComponentBuilder, renderElement } from "../renderer";
 import "../styles/glide.css";
 import "../styles/contact.css";
-
-const { TechStack } = await import("./TechStack");
-const { DesktopMenu } = await import("./DesktopMenu");
-const { Projects } = await import("./Projects");
-const { Socials } = await import("./Socials");
+import { DesktopMenu } from "./DesktopMenu";
+import { Socials } from "./Socials";
+import { TechStack } from "./TechStack";
+import { Projects } from "./Projects";
 
 export class Main extends ComponentBuilder {
   constructor() {
     super();
   }
-  OnMount(): void {
+  async OnMount(): Promise<void> {
     console.log("🚀Main Component did mount🚀");
     const script = document.createElement("script");
 

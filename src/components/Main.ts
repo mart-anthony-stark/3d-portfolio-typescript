@@ -13,19 +13,7 @@ export class Main extends ComponentBuilder {
   async OnMount(): Promise<void> {
     console.log("🚀Main Component did mount🚀");
     const script = document.createElement("script");
-
-    // const glide = `new Glide(".multi1", {
-    //   type: "carousel",
-    //   autoplay: 3500,
-    //   focusAt: 'center',
-    //   perView: 2,
-    // }).mount();
-    // new Glide(".multi2", {
-    //   type: "carousel",
-    //   autoplay: 3000,
-    //   focusAt: 'center',
-    //   perView: 2,
-    // }).mount();`;
+    
     script.innerHTML = `
       AOS.init();
     `;

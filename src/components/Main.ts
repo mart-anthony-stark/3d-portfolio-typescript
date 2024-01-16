@@ -13,14 +13,14 @@ export class Main extends ComponentBuilder {
   async OnMount(): Promise<void> {
     console.log("🚀Main Component did mount🚀");
     const script = document.createElement("script");
-    
+
     script.innerHTML = `
       AOS.init();
     `;
     renderElement(script);
   }
 
-  template: string = `<main class="hidden">
+  template = `<main class="hidden">
   <div class="banner">
     <div class="inner-container">
     <enfold-animate name="fadeRight" duration="2">

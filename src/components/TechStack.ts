@@ -13,7 +13,7 @@ export class TechStack extends ComponentBuilder {
     "NodeJS",
     "ThreeJS",
   ];
-  template: string = `
+  template = `
     <div class="techstack">
         ${this.stack
           .map(

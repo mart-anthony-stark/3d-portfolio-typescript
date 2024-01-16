@@ -12,6 +12,13 @@ export interface IProject {
 export class Projects extends ComponentBuilder {
   private projects: Array<IProject> = [
     {
+      name: "Earthed",
+      img: "/assets/earthed.png",
+      desc: "Earthed is a web application for learning earth science. It is a platform for students to learn and teachers to teach earth science in a fun and interactive way with the use of 3D models and gamified quizzes. It is also a platform for teachers to create and share their own lessons and quizzes.",
+      link: "https://www.earthed-learning.online",
+      stack: ["VueJS", "NodeJS", "MongoDB", "ThreeJS"],
+    },
+    {
       name: "CamNorth Travel",
       img: "/assets/camnorth2.png",
       desc: "The CamNorth Travel App is a user-friendly mobile application designed to enhance the travel experience for visitors exploring the captivating province of Camarines Norte in the Philippines. The app serves as a comprehensive guide, providing travelers with essential information, interactive maps, and personalized recommendations to ensure a memorable and hassle-free journey.",

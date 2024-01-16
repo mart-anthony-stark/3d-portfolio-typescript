@@ -47,7 +47,7 @@ export class Projects extends ComponentBuilder {
     },
   ];
 
-  template: string = `
+  template = `
         ${this.projects.map((project) => {
           return `<div class="card" data-link="${project.link}">
                     <figure>

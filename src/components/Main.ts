@@ -10,7 +10,7 @@ export class Main extends ComponentBuilder {
   constructor() {
     super();
   }
-  async OnMount(): Promise<void> {
+  OnMount() {
     console.log("🚀Main Component did mount🚀");
     const script = document.createElement("script");
 
@@ -109,6 +109,5 @@ export class Main extends ComponentBuilder {
 
 </div>
 </main>
-
 `;
 }

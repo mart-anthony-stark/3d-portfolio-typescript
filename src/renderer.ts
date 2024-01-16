@@ -19,7 +19,7 @@ export const addElement = (element: String): void => {
 
 // CLASS-BASED
 export class ComponentBuilder {
-  template: string = "";
+  template = "";
   constructor() {}
 
   register() {

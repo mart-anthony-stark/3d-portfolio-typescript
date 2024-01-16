@@ -31,7 +31,7 @@ export const socials: Array<ISocials> = [
 ];
 
 export class Socials extends ComponentBuilder {
-  template: string = `
+  template = `
     <div class="socials">
         ${socials
           .map(

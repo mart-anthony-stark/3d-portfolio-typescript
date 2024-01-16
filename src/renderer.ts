@@ -22,16 +22,16 @@ export class ComponentBuilder {
   template = "";
   constructor() {}
 
-  register() {
+  register(): void {
     const div = document.createElement("div");
     div.innerHTML = this.template;
     App!.appendChild(div);
     this.OnMount();
   }
 
-  component() {
+  component(): string {
     return this.template;
   }
 
-  OnMount() {}
+  OnMount(): void | Promise<void> {}
 }

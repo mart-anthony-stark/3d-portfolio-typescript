@@ -18,7 +18,7 @@ export class GalaxyScene extends ComponentBuilder {
   constructor() {
     super();
   }
-  template: string = `<canvas id="bg"></canvas>`;
+  template = `<canvas id="bg"></canvas>`;
 
   async OnMount(): Promise<void> {
     const { GLTFLoader } = await import(

@@ -8,7 +8,7 @@ export class SpaceshipScene extends ComponentBuilder {
     super();
   }
 
-  template: string = `<canvas id="spaceship"></canvas>`;
+  template = `<canvas id="spaceship"></canvas>`;
 
   OnMount(): void {
     const scene = new THREE.Scene();

@@ -46,7 +46,7 @@ a.active {
 }
 .burger {
   position: fixed;
-  right: 15px;
+  right: 3rem;
   top: 15px;
   height: 30px;
   width: 40px;
@@ -176,8 +176,9 @@ main {
 }
 
 section {
-  min-height: 100vh;
+  min-height: 120vh !important;
   padding: 1rem;
+  /* width: 70%; */
 }
 .center {
   display: flex;
@@ -291,7 +292,7 @@ blockquote {
 @media screen and (max-width: 890px) {
   main {
     grid-template-columns: 1fr;
-    /* width: calc(100% - 50px) !important; */
+    /* width: 100% !important; */
   }
   .main-links {
     display: none;
@@ -308,10 +309,6 @@ blockquote {
 }
 
 @media screen and (max-width: 425px) {
-  .banner .inner-container {
-    margin: auto;
-    width: 80%;
-  }
   blockquote p {
     font-size: 2rem;
   }

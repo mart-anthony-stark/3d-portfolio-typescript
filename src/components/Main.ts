@@ -60,7 +60,7 @@ export class Main extends ComponentBuilder {
 
     <section class='center half-vh'>
       <blockquote data-aos="fade-up" data-aos-duration="2000" >
-        <p>Experienced in both web consulting agency and startup environments.</p>
+        <p>Experienced in both web solutions agency and startup environments.</p>
       </blockquote>
     </section>
 

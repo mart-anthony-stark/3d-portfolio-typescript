@@ -26,6 +26,13 @@ export class Projects extends ComponentBuilder {
       stack: ["Flutter", "Firebase"],
     },
     {
+      name: "School Attendance System",
+      img: "https://raw.githubusercontent.com/mart-anthony-stark/Mart-Anthony-Salazar-Developer-Portfolio/main/public/projects/shrewsbury/shrewsburry.webp",
+      desc: "QR Code Attendance System for Shrewsbury International School Bangkok",
+      link: "https://github.com/mart-anthony-stark/Shrewsbury-International-School-SAS",
+      stack: ["Vue", "Nodejs", "MongoDB"],
+    },
+    {
       name: "Pit Arsons",
       img: "/assets/pitarsons.png",
       desc: "Food Ecommerce Web App",

@@ -176,7 +176,7 @@ main {
 }
 
 section {
-  min-height: 120vh !important;
+  min-height: 110vh !important;
   padding: 1rem;
   /* width: 70%; */
 }

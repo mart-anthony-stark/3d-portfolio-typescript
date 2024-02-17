@@ -65,6 +65,11 @@ export class Main extends ComponentBuilder {
     </section>
 
   <section id="projects" class='projects center'>
+    <div class="center" style="text-align:center">
+      <blockquote id="">
+          <p>Here are some of my projects</p>
+      </blockquote>
+    </div>
   ${new Projects().component()}
 
   <a class="archive" href="https://github.com/mart-anthony-stark" target="_blank">
